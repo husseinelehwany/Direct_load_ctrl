@@ -594,7 +594,7 @@ Material,
     MediumRough,             !- Roughness
     0.2032,                  !- Thickness {m}
     1.11,                    !- Conductivity {W/m-K}
-    800,                     !- Density {kg/m3}
+    2240,                    !- Density {kg/m3}
     920;                     !- Specific Heat {J/kg-K}
 
 Material,
@@ -658,9 +658,9 @@ Construction,
 
 Construction,
     Exterior Wall,           !- Name
-    M01 100mm brick,         !- Outside Layer
-    M15 200mm heavyweight concrete,  !- Layer 2
-    Wall insulation,         !- Layer 3
+    Wall insulation,         !- Outside Layer
+    M01 100mm brick,         !- Layer 2
+    M15 200mm heavyweight concrete,  !- Layer 3
     F04 Wall air space resistance,  !- Layer 4
     G01a 19mm gypsum board;  !- Layer 5
 
@@ -672,8 +672,8 @@ Construction,
 
 Construction,
     Exterior Roof,           !- Name
-    M11 100mm lightweight concrete,  !- Outside Layer
-    Roof insulation,         !- Layer 2
+    Roof insulation,         !- Outside Layer
+    M11 100mm lightweight concrete,  !- Layer 2
     F05 Ceiling air space resistance,  !- Layer 3
     F16 Acoustic tile;       !- Layer 4
 
@@ -1727,7 +1727,7 @@ ZoneInfiltration:DesignFlowRate,
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.0007,                  !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.00025,                 !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
     1,                       !- Constant Term Coefficient
     ,                        !- Temperature Term Coefficient
@@ -2010,6 +2010,16 @@ Output:Variable,
 Output:Variable,
     *,                       !- Key Value
     Zone People Occupant Count,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Zone Thermostat Heating Setpoint Temperature,  !- Variable Name
+    Timestep;                !- Reporting Frequency
+
+Output:Variable,
+    *,                       !- Key Value
+    Zone Thermostat Cooling Setpoint Temperature,  !- Variable Name
     Timestep;                !- Reporting Frequency
 
 
